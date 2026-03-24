@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRPG LIBRARY.sys</title>
+    <link rel="stylesheet" href="trpg.css">
+    <link rel="stylesheet" href="../cursor.css">
+    <script src="../cursorstyle.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+    <div id="transition-layer">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="logo"><img src="../images/Hw_22.png"></div>
+            <div class="nav-item active">LIST</div>
+            <div class="nav-item" onclick="location.href='../index.html'">BACK</div>
+        </div>
+
+        <div class="main-content">
+            <div class="window-frame">
+                <div class="window-header">TRPG_COLLECTION.exe</div>
+                <div class="banner-container">
+                    <a href="trpg_view.html?id=open" class="banner-item">
+                        <img src="../images/trpg/open.webp">
+                    </a>
+                    <a href="trpg_view.html?id=highbuilding" class="banner-item">
+                        <img src="../images/trpg/highbuilding.jpg">
+                    </a>
+                    <a href="trpg_view.html?id=remember" class="banner-item">
+                        <img src="../images/trpg/remeber.webp">
+                    </a>
+                    <a href="trpg_view.html?id=love" class="banner-item">
+                        <img src="../images/trpg/love.webp">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <div id="custom-cursor"></div>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        gsap.to(".column", {
+            duration: 0.8,
+            y: "100%", 
+            stagger: 0.1,
+            ease: "power4.inOut"
+        });
+    });
+</script>
+</body>
+</html>

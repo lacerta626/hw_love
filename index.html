@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw_love</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="transition-layer">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">🐤</div>
+            <nav>
+                <div class="nav-item active" data-page="home">Home</div>
+                <div class="nav-item" data-page="trpg">TRPG</div>
+                <div class="nav-item" data-page="gallery">Gallery</div>
+            </nav>
+            <div class="icons">🔔<br>📶</div>
+        </aside>
+
+        <main class="main" id="main-display">
+        </main>
+    </div>
+
+    <template id="temp-home">
+        <section class="banner">
+            <img src="images/18242611_rm435-065.jpg" alt="banner">
+        </section>
+        <section class="content">
+            <div class="card profile">
+                <h3>인생은 보고 싶은 것만 보여요</h3>
+                <div class="avatars">
+                    <img src="char1.png">
+                    <img src="char2.png">
+                </div>
+                <p>DOT 갱 @myid</p>
+            </div>
+            <div class="card gallery">
+                <h3>최근 게시물</h3>
+                <ul>
+                    <li>IGX142 <span>04.11</span></li>
+                </ul>
+            </div>
+            <!-- 미니홈 -->
+            <div class="card mini">
+                <div class="mini-top">
+                    <div class="mini-profile"></div>
+                    <div>
+                        <b>초원</b>
+                        <p>내 세상 · 로그인</p>
+                    </div>
+                </div>
+                <div class="mini-images">
+                    <img src="img1.jpg">
+                    <img src="img2.jpg">
+                </div>
+            </div>
+            <!-- 캘린더 -->
+            <div class="card calendar-card">
+                <div id="clock" class="clock">10:23 오후</div>
+                <div id="date" class="date-display">2026-03-24 화</div>
+                <div class="calendar">
+                    <div class="calendar-grid" id="calendarGrid"></div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            © 2026 MY HOME
+        </footer>
+        </section>
+    </template>
+
+    <template id="temp-trpg">
+        <div class="window-frame glass-window">
+            <div class="window-header">
+                <span id="trpg-title">TRPG_COLLECTION.exe</span>
+                <button id="back-to-list"
+                    style="display:none; float:right; cursor:pointer; color:white; background:none; border:none;">[BACK]</button>
+            </div>
+
+            <div class="banner-container" id="trpg-list-view">
+                <div class="banner-item" onclick="openTRPG('open')"><img src="../images/trpg/open.webp"></div>
+                <div class="banner-item" onclick="openTRPG('highbuilding')"><img src="../images/trpg/highbuilding.jpg">
+                </div>
+                <div class="banner-item" onclick="openTRPG('remember')"><img src="../images/trpg/remeber.webp"></div>
+                <div class="banner-item" onclick="openTRPG('love')"><img src="../images/trpg/love.webp"></div>
+            </div>
+
+            <div id="trpg-detail-view" style="display:none; padding:20px; overflow-y:auto; height:100%;">
+                <div id="pw-section" style="text-align:center; padding-top:40px;">
+                    <h3>🔒 PASSWORD REQUIRED</h3>
+                    <input type="password" id="pwInput" style="padding:8px; border-radius:5px;">
+                    <button id="pwBtn" style="padding:8px 15px; cursor:pointer;">확인</button>
+                    <p id="pwError" style="color:red; font-size:12px; margin-top:10px;"></p>
+                </div>
+                <div id="trpg-content-area" style="display:none;"></div>
+            </div>
+        </div>
+    </template>
+    <div id="trpg-popup" class="popup-overlay">
+        <div class="popup-window">
+            <div class="popup-header">
+                <span class="title">TRPG_VIEWER.exe</span>
+                <button class="close-btn" onclick="closeTRPGPopup()">[X]</button>
+            </div>
+            <div id="popup-content" class="popup-body">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

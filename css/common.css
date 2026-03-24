@@ -1,0 +1,123 @@
+@import url(font.css);
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body { 
+    display: flex; 
+    font-family: 'A2z', sans-serif; 
+    font-size: 16px; 
+    color: #000; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    /* 배경 이미지 설정 */
+    background: url(../images/back1.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed; /* 스크롤 시 배경 고정 (선택) */
+}
+
+li { list-style: none; }
+img, input { vertical-align: middle; }
+a { text-decoration: none; color: #000; }
+
+/* ---------------- */
+/* LAYOUT */
+/* ---------------- */
+
+/* 전체 외곽 틀: 약간의 투명도와 블러를 주어 유리 느낌 시작 */
+.container {
+    display: flex;
+    width: 1440px;
+    height: 750px;
+    background: rgba(255, 255, 255, 0.15); /* 매우 투명한 흰색 */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 사이드바: 배경을 투명하게 */
+.sidebar {
+    width: 120px;
+    background: transparent; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    gap: 30px;
+}
+
+/* 메인 영역: 내부 카드들이 돋보이도록 배경색 제거 */
+.main {
+    flex: 1;
+    background: transparent; 
+    padding: 25px;
+    overflow-y: auto;
+}
+
+/* ---------------- */
+/* CARD (글래스모피즘 핵심) */
+/* ---------------- */
+
+.card {
+    background: rgba(255, 255, 255, 0.25); /* 카드 배경 투명도 */
+    backdrop-filter: blur(12px); /* 뒷배경 흐림 강도 */
+    -webkit-backdrop-filter: blur(12px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    color: #000;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px); /* 마우스 올렸을 때 살짝 뜨는 효과 */
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* ---------------- */
+/* GRID SYSTEM */
+/* ---------------- */
+
+.content {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ---------------- */
+/* 기타 스타일 유지 */
+/* ---------------- */
+
+.sidebar nav { display: flex; flex-direction: column; gap: 15px; }
+.sidebar a { color: #444; font-size: 14px; font-weight: 500; }
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* 이미지 너비 최적화 */
+img { max-width: 100%; height: auto; border-radius: 8px; }
